@@ -11,6 +11,6 @@ import {roleCheckJWT} from "../middlewares/authMiddleware";
 const router = express.Router();
 
 // Login Route
-router.post('/', validateLoginRequest, roleCheckJWT[1], index );
+router.post('/', validateLoginRequest, index );
 
 export default router;
