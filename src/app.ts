@@ -9,6 +9,7 @@ dotenv.config({path: [".env.dev"]});
 
 import path from "path"
 import cors from "cors"
+import helmet from "helmet"
 import cookieParser from "cookie-parser"
 import logger from "morgan"
 import logger2 from "./utils/logger";
@@ -46,7 +47,8 @@ app.use(cors({
         }
     }
 }));
-
+//apply helmet security
+app.use(helmet());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
